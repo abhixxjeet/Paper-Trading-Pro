@@ -1,0 +1,19 @@
+venv/
+__pycache__/
+node_modules/
+.env
+*.log
+
+# Front-end build output
+dist/
+dist-ssr/
+
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+
+# Vercel
+.vercel/

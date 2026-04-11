@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global Styles ──────────────────────────────────────────── */
+:root {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: rgba(30, 41, 59, 0.7);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent: #6366f1;
+  --profit: #10b981;
+  --loss: #ef4444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-secondary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ── Glass Card ─────────────────────────────────────────────── */
+@layer components {
+  .glass-card {
+    @apply bg-dark-800/70 backdrop-blur-xl border border-dark-700/50 rounded-2xl shadow-card;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-primary-500/30 hover:shadow-glow;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-500 text-white font-semibold px-6 py-2.5 rounded-xl 
+           transition-all duration-300 hover:from-primary-500 hover:to-primary-400 hover:shadow-glow
+           active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-dark-700/50 text-dark-200 font-medium px-5 py-2.5 rounded-xl border border-dark-600/50
+           transition-all duration-300 hover:bg-dark-700 hover:border-dark-500
+           active:scale-[0.98];
+  }
+
+  .btn-success {
+    @apply bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-semibold px-6 py-2.5 rounded-xl
+           transition-all duration-300 hover:from-emerald-500 hover:to-emerald-400 hover:shadow-lg
+           active:scale-[0.98];
+  }
+
+  .btn-danger {
+    @apply bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold px-6 py-2.5 rounded-xl
+           transition-all duration-300 hover:from-red-500 hover:to-red-400 hover:shadow-lg
+           active:scale-[0.98];
+  }
+
+  .input-field {
+    @apply w-full bg-dark-900/50 border border-dark-600/50 rounded-xl px-4 py-3 text-dark-100
+           placeholder:text-dark-500 focus:outline-none focus:border-primary-500/50 focus:ring-1 
+           focus:ring-primary-500/20 transition-all duration-300;
+  }
+
+  .badge-profit {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 
+           text-xs font-semibold;
+  }
+
+  .badge-loss {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-red-500/10 text-red-400 
+           text-xs font-semibold;
+  }
+
+  .stat-card {
+    @apply glass-card p-5 flex flex-col gap-2;
+  }
+
+  .table-header {
+    @apply px-4 py-3 text-left text-xs font-semibold text-dark-400 uppercase tracking-wider;
+  }
+
+  .table-cell {
+    @apply px-4 py-3.5 text-sm;
+  }
+
+  .shimmer {
+    @apply animate-pulse bg-dark-700/50 rounded;
+  }
+}
+
+/* ── Animations ─────────────────────────────────────────────── */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-scroll {
+  animation: ticker-scroll 30s linear infinite;
+}
+
+/* ── Gradient text ──────────────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, #818cf8 0%, #6366f1 50%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glow effects ───────────────────────────────────────────── */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(167, 139, 250, 0.1), rgba(99, 102, 241, 0.3));
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-border:hover::before {
+  opacity: 1;
+}
+
+/* ── Tab styles ─────────────────────────────────────────────── */
+.tab-active {
+  @apply text-primary-400 border-b-2 border-primary-400;
+}
+
+.tab-inactive {
+  @apply text-dark-400 border-b-2 border-transparent hover:text-dark-200 transition-colors;
+}
