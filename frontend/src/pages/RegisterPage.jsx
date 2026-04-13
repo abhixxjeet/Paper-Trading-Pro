@@ -46,7 +46,7 @@ export default function RegisterPage() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-indigo-600 flex items-center justify-center shadow-glow">
               <LineChart className="w-5 h-5 text-white" />
             </div>
-            <span className="text-2xl font-bold font-mono text-gradient">StockSim</span>
+            <span className="text-2xl font-bold font-mono text-gradient">Paper Trading Pro</span>
           </div>
 
           <div className="glass-card p-8 sm:p-10 border border-dark-700/60 shadow-2xl relative overflow-hidden group">

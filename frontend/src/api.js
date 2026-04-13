@@ -17,22 +17,22 @@ const api = axios.create({
 
 // ── Stocks API (uses serverless functions) ─────────────────────
 export const stocksAPI = {
-  getQuote: (symbol) => api.get(`/stocks/quote?symbol=${encodeURIComponent(symbol)}`),
-  getIndianStocks: (limit = 15) => api.get(`/stocks/quotes?market=india&limit=${limit}`),
-  getUSStocks: (limit = 15) => api.get(`/stocks/quotes?market=us&limit=${limit}`),
-  getAllStocks: (market = 'all', limit = 20) => api.get(`/stocks/quotes?market=${market}&limit=${limit}`),
-  getHistory: (symbol, period = '1mo') => api.get(`/stocks/history?symbol=${encodeURIComponent(symbol)}&period=${period}`),
+  getQuote: (symbol) => api.get(`/stocks/quote/${encodeURIComponent(symbol)}`),
+  getIndianStocks: (limit = 15) => api.get(`/stocks/quotes/indian?limit=${limit}`),
+  getUSStocks: (limit = 15) => api.get(`/stocks/quotes/us?limit=${limit}`),
+  getAllStocks: (market = 'all', limit = 20) => api.get(`/stocks/quotes/all?market=${market}&limit=${limit}`),
+  getHistory: (symbol, period = '1mo') => api.get(`/stocks/history/${encodeURIComponent(symbol)}?period=${period}`),
   search: (query) => api.get(`/stocks/search?q=${encodeURIComponent(query)}`),
 };
 
 // ── Local Storage Keys ─────────────────────────────────────────
 const STORAGE_KEYS = {
-  USER: 'stocksim_user',
-  TOKEN: 'stocksim_token',
-  USERS: 'stocksim_users',
-  PORTFOLIO: 'stocksim_portfolio',
-  TRANSACTIONS: 'stocksim_transactions',
-  WATCHLIST: 'stocksim_watchlist',
+  USER: 'papertradingpro_user',
+  TOKEN: 'papertradingpro_token',
+  USERS: 'papertradingpro_users',
+  PORTFOLIO: 'papertradingpro_portfolio',
+  TRANSACTIONS: 'papertradingpro_transactions',
+  WATCHLIST: 'papertradingpro_watchlist',
 };
 
 // ── Helper: generate ID ────────────────────────────────────────
@@ -48,7 +48,7 @@ function ensureInitialized() {
       {
         id: 1,
         name: 'Admin',
-        email: 'admin@stocksim.com',
+        email: 'admin@papertradingpro.com',
         password: 'admin123',
         balance: 1000000,
         role: 'admin',
@@ -58,7 +58,7 @@ function ensureInitialized() {
       {
         id: 2,
         name: 'Demo Trader',
-        email: 'demo@stocksim.com',
+        email: 'demo@papertradingpro.com',
         password: 'demo123',
         balance: 100000,
         role: 'user',

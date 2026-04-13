@@ -40,23 +40,23 @@ async def _create_default_admin():
     from app.models.user import User
 
     async with async_session() as db:
-        result = await db.execute(select(User).where(User.email == "admin@stocksim.com"))
+        result = await db.execute(select(User).where(User.email == "admin@papertradingpro.com"))
         if not result.scalar_one_or_none():
             admin = User(
                 name="Admin",
-                email="admin@stocksim.com",
+                email="admin@papertradingpro.com",
                 password=get_password_hash("admin123"),
                 balance=1000000,
                 role="admin",
             )
             db.add(admin)
             await db.commit()
-            logger.info("✅ Default admin created (admin@stocksim.com / admin123)")
+            logger.info("✅ Default admin created (admin@papertradingpro.com / admin123)")
 
 
 # Create FastAPI app
 app = FastAPI(
-    title="StockSim - AI Stock Trading Simulator",
+    title="Paper Trading Pro - AI Stock Trading Simulator",
     description="AI-powered paper trading platform with real-time market data",
     version="1.0.0",
     lifespan=lifespan,
@@ -84,7 +84,7 @@ app.include_router(websocket.router)
 async def root():
     """API health check."""
     return {
-        "name": "StockSim API",
+        "name": "Paper Trading Pro API",
         "version": "1.0.0",
         "status": "running",
         "trading_enabled": settings.TRADING_ENABLED,

@@ -1,4 +1,4 @@
-# 📈 StockSim - AI-Powered Paper Trading Platform
+# 📈 Paper Trading Pro - AI-Powered Paper Trading Platform
 
 A full-stack simulated stock trading platform built with React, FastAPI, real-time WebSockets, and AI-driven stock predictions (LSTM).
 
@@ -43,7 +43,7 @@ uvicorn main:app --reload
 *Note: The backend runs on `http://localhost:8000`*
 
 **Default Admin**:
-- Email: `admin@stocksim.com`
+- Email: `admin@papertradingpro.com`
 - Password: `admin123`
 
 ### 2. Frontend Setup

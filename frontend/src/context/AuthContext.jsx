@@ -9,8 +9,8 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     // Check if user is already logged in
-    const storedUser = localStorage.getItem('stocksim_user');
-    const token = localStorage.getItem('stocksim_token');
+    const storedUser = localStorage.getItem('papertradingpro_user');
+    const token = localStorage.getItem('papertradingpro_token');
     
     if (storedUser && token) {
       try {
@@ -23,13 +23,13 @@ export function AuthProvider({ children }) {
           })
           .catch(() => {
             // Token expired or invalid
-            localStorage.removeItem('stocksim_token');
-            localStorage.removeItem('stocksim_user');
+            localStorage.removeItem('papertradingpro_token');
+            localStorage.removeItem('papertradingpro_user');
             setUser(null);
           });
       } catch {
-        localStorage.removeItem('stocksim_user');
-        localStorage.removeItem('stocksim_token');
+        localStorage.removeItem('papertradingpro_user');
+        localStorage.removeItem('papertradingpro_token');
       }
     }
     setLoading(false);
@@ -48,8 +48,8 @@ export function AuthProvider({ children }) {
   };
 
   const logout = () => {
-    localStorage.removeItem('stocksim_token');
-    localStorage.removeItem('stocksim_user');
+    localStorage.removeItem('papertradingpro_token');
+    localStorage.removeItem('papertradingpro_user');
     setUser(null);
   };
 

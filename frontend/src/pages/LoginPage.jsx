@@ -44,7 +44,7 @@ export default function LoginPage() {
             Master the Market.<br />Risk-Free Trading.
           </h1>
           <p className="mt-6 text-lg text-dark-300 max-w-lg leading-relaxed font-light">
-            StockSim combines real-time data from Indian and US markets with advanced AI predictions. Practice your strategies securely with a virtual ₹1,00,000 portfolio.
+            Paper Trading Pro combines real-time data from Indian and US markets with advanced AI predictions. Practice your strategies securely with a virtual ₹1,00,000 portfolio.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export default function LoginPage() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-indigo-600 flex items-center justify-center shadow-glow">
               <LineChart className="w-5 h-5 text-white" />
             </div>
-            <span className="text-2xl font-bold font-mono text-gradient">StockSim</span>
+            <span className="text-2xl font-bold font-mono text-gradient">Paper Trading Pro</span>
           </div>
 
           <div className="glass-card p-8 sm:p-10 border border-dark-700/60 shadow-2xl relative overflow-hidden group">
@@ -153,7 +153,7 @@ export default function LoginPage() {
             </form>
 
             <p className="mt-8 text-center text-sm text-dark-400 font-medium">
-              New to StockSim?{' '}
+              New to Paper Trading Pro?{' '}
               <Link to="/register" className="text-primary-400 font-semibold hover:text-primary-300 hover:underline underline-offset-4 transition-all">
                 Create an account
               </Link>
@@ -165,20 +165,20 @@ export default function LoginPage() {
               <div className="space-y-1.5">
                 <button
                   type="button"
-                  onClick={() => { setEmail('demo@stocksim.com'); setPassword('demo123'); }}
+                  onClick={() => { setEmail('demo@papertradingpro.com'); setPassword('demo123'); }}
                   className="w-full text-left px-3 py-2 rounded-lg bg-dark-800/60 hover:bg-dark-700/80 transition-colors text-xs group"
                 >
                   <span className="text-dark-300 group-hover:text-white transition-colors">
-                    Trader: <span className="font-mono text-dark-200">demo@stocksim.com</span> / <span className="font-mono text-dark-200">demo123</span>
+                    Trader: <span className="font-mono text-dark-200">demo@papertradingpro.com</span> / <span className="font-mono text-dark-200">demo123</span>
                   </span>
                 </button>
                 <button
                   type="button"
-                  onClick={() => { setEmail('admin@stocksim.com'); setPassword('admin123'); }}
+                  onClick={() => { setEmail('admin@papertradingpro.com'); setPassword('admin123'); }}
                   className="w-full text-left px-3 py-2 rounded-lg bg-dark-800/60 hover:bg-dark-700/80 transition-colors text-xs group"
                 >
                   <span className="text-dark-300 group-hover:text-white transition-colors">
-                    Admin: <span className="font-mono text-dark-200">admin@stocksim.com</span> / <span className="font-mono text-dark-200">admin123</span>
+                    Admin: <span className="font-mono text-dark-200">admin@papertradingpro.com</span> / <span className="font-mono text-dark-200">admin123</span>
                   </span>
                 </button>
               </div>

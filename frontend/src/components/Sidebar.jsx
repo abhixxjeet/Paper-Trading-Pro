@@ -42,7 +42,7 @@ export default function Sidebar({ isAdmin }) {
           <LineChart className="w-5 h-5 text-white" />
         </div>
         <span className="text-xl font-bold font-mono text-gradient tracking-tight">
-          StockSim
+          Paper Trading Pro
         </span>
       </div>
 
