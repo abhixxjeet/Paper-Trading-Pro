@@ -17,11 +17,11 @@ const api = axios.create({
 
 // ── Stocks API (uses serverless functions) ─────────────────────
 export const stocksAPI = {
-  getQuote: (symbol) => api.get(`/stocks/quote/${encodeURIComponent(symbol)}`),
-  getIndianStocks: (limit = 15) => api.get(`/stocks/quotes/indian?limit=${limit}`),
-  getUSStocks: (limit = 15) => api.get(`/stocks/quotes/us?limit=${limit}`),
-  getAllStocks: (market = 'all', limit = 20) => api.get(`/stocks/quotes/all?market=${market}&limit=${limit}`),
-  getHistory: (symbol, period = '1mo') => api.get(`/stocks/history/${encodeURIComponent(symbol)}?period=${period}`),
+  getQuote: (symbol) => api.get(`/stocks/quote?symbol=${encodeURIComponent(symbol)}`),
+  getIndianStocks: (limit = 15) => api.get(`/stocks/quotes?market=india&limit=${limit}`),
+  getUSStocks: (limit = 15) => api.get(`/stocks/quotes?market=us&limit=${limit}`),
+  getAllStocks: (market = 'all', limit = 20) => api.get(`/stocks/quotes?market=${market}&limit=${limit}`),
+  getHistory: (symbol, period = '1mo') => api.get(`/stocks/history?symbol=${encodeURIComponent(symbol)}&period=${period}`),
   search: (query) => api.get(`/stocks/search?q=${encodeURIComponent(query)}`),
 };
 
